@@ -1,0 +1,238 @@
+.gacha-draw-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.draw-layout {
+  text-align: center;
+  color: #fff;
+  max-width: 480px;
+}
+
+.draw-header {
+  margin-bottom: 16px;
+}
+
+.draw-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.draw-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffd93d, #ff9a56);
+  color: #1a1a1a;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.draw-badge--count {
+  background: linear-gradient(90deg, #7f5af0, #b19cd9);
+  color: #fff;
+  margin-left: 6px;
+}
+
+.machine-wrapper {
+  margin: 16px auto 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.gacha-machine {
+  width: 220px;
+  height: 260px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ff6363, #c41e3a);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  padding: 10px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.machine-top {
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffe4b5, #fff);
+  margin-bottom: 10px;
+}
+
+.machine-window {
+  flex: 1;
+  border-radius: 14px;
+  background: radial-gradient(circle at 20% 0%, #ffd700, #ff9a56 45%, #ff6b6b 100%);
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.machine-ring {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.7);
+  position: absolute;
+  animation: ring-pulse 1.8s ease-in-out infinite;
+}
+
+.machine-ball {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #fff, #ffd93d 40%, #ff9a56 80%);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+  position: relative;
+  z-index: 1;
+}
+
+.machine-sparkles {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.7) 0, transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.7) 0, transparent 40%),
+    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.6) 0, transparent 40%);
+  opacity: 0.2;
+  mix-blend-mode: screen;
+  animation: sparkles 2s linear infinite;
+}
+
+.machine-base {
+  margin-top: 10px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #3b3b3b, #111);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.machine-slot {
+  width: 90px;
+  height: 14px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0%, #666, #111);
+}
+
+.gacha-machine--spinning .machine-ring {
+  animation: ring-spin 0.6s linear infinite;
+}
+
+.gacha-machine--spinning .machine-ball {
+  animation: ball-bounce 0.45s ease-in-out infinite;
+}
+
+.gacha-machine--spinning .machine-sparkles {
+  opacity: 0.5;
+}
+
+.trial-note {
+  color: #ffd93d;
+  font-weight: 600;
+}
+
+.hint {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin: 16px 0;
+}
+
+.draw-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn-draw-main {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ffd93d, #ff9a56);
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn-draw-main:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+}
+
+.btn-draw-main:disabled {
+  cursor: default;
+  opacity: 0.7;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 10px 20px;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-back:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: #fff;
+}
+
+@keyframes ring-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
+}
+
+@keyframes ring-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ball-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sparkles {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-10px, -10px, 0);
+  }
+}

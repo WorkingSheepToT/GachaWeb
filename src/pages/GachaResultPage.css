@@ -1,0 +1,229 @@
+.gacha-result-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #ffe4b5 0%, #c41e3a 45%, #260b16 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.result-inner {
+  max-width: 460px;
+  width: 100%;
+  text-align: center;
+  color: #fff7e6;
+}
+
+.result-inner--multi {
+  max-width: 720px;
+}
+
+.reward-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 0 auto 20px;
+  justify-items: center;
+}
+
+@media (max-width: 640px) {
+  .reward-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+.reward-card--small {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  margin: 0;
+}
+
+.reward-card--small .reward-frame {
+  padding: 8px;
+  min-height: 100px;
+}
+
+.reward-card--small .reward-image {
+  max-height: 72px;
+  margin-bottom: 4px;
+}
+
+.reward-card--small .reward-rarity {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  margin-bottom: 4px;
+}
+
+.reward-card--small .reward-name {
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+.result-title {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+
+.result-subtitle {
+  margin: 0 0 20px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.reward-card {
+  margin: 0 auto 20px;
+  width: 260px;
+  height: 180px;
+  position: relative;
+}
+
+.reward-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.55), transparent 60%);
+  opacity: 0.6;
+  filter: blur(4px);
+}
+
+.reward-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #fff8e7, #ffe4b5);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reward-rarity {
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.reward-rarity--ur {
+  background: linear-gradient(90deg, #ffde59, #ff914d);
+  color: #4a2500;
+}
+
+.reward-rarity--sr {
+  background: linear-gradient(90deg, #b19cd9, #7f5af0);
+  color: #fefcff;
+}
+
+.reward-rarity--r {
+  background: linear-gradient(90deg, #4fd1c5, #3182ce);
+  color: #e6fffa;
+}
+
+.reward-rarity--n {
+  background: linear-gradient(90deg, #a0aec0, #718096);
+  color: #edf2f7;
+}
+
+.reward-rarity--ar,
+.reward-rarity--sar {
+  background: linear-gradient(90deg, #ffde59, #ff914d);
+  color: #4a2500;
+}
+
+.reward-rarity--rr {
+  background: linear-gradient(90deg, #b19cd9, #7f5af0);
+  color: #fefcff;
+}
+
+.reward-rarity--s {
+  background: linear-gradient(90deg, #4fd1c5, #3182ce);
+  color: #e6fffa;
+}
+
+.reward-rarity--u {
+  background: linear-gradient(90deg, #a0aec0, #718096);
+  color: #edf2f7;
+}
+
+.reward-image {
+  width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.reward-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.reward-desc {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #4a4a4a;
+}
+
+.result-note {
+  font-size: 0.85rem;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.result-btn-primary,
+.result-btn-secondary {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.result-btn-primary {
+  background: linear-gradient(135deg, #ffd93d, #ff9a56);
+  color: #1a1a1a;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+.result-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.result-btn-secondary {
+  background: transparent;
+  color: #fff7e6;
+  border: 1px solid rgba(255, 247, 230, 0.6);
+}
+
+.result-btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.25);
+  border-color: #fff7e6;
+}
+
+@media (max-width: 480px) {
+  .reward-card {
+    width: 220px;
+    height: 160px;
+  }
+}

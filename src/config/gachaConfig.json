@@ -1,0 +1,133 @@
+{
+  "categories": [
+    { "id": "home", "label": "首頁" },
+    { "id": "rush", "label": "RUSH" },
+    { "id": "appraisal", "label": "鑑定卡" },
+    { "id": "pokemon", "label": "寶可夢" },
+    { "id": "onepiece", "label": "海賊王" },
+    { "id": "hobbies", "label": "嗜好" },
+    { "id": "figures", "label": "公仔" },
+    { "id": "yugioh", "label": "遊戲王" },
+    { "id": "mtg", "label": "MTG" },
+    { "id": "dragonball", "label": "七龍珠" },
+    { "id": "weiss", "label": "Weiß Schwarz" },
+    { "id": "duelmasters", "label": "決鬥大師" }
+  ],
+  "events": [
+    {
+      "id": "special-high-return",
+      "poolId": "pokemon_gatch1",
+      "title": "特別高回報扭蛋",
+      "tags": ["剩餘少量", "新手限定", "高機率賺", "最低保證60%以上"],
+      "badge": "新註冊24小時限定",
+      "guarantee": "最低保底 550pt",
+      "limitLabel": "每人限玩1次",
+      "cost": 500,
+      "cost10": 4500,
+      "remaining": 697,
+      "total": 15000,
+      "theme": "pokemon",
+      "highlightText": "絕勝抽卡!",
+      "subText": "絕對會贏!!",
+      "trialConfig": {
+        "fixedRewardId": "eevee-ar"
+      }
+    },
+    {
+      "id": "onepiece-premium",
+      "title": "海賊王限定扭蛋",
+      "tags": ["限量", "稀有卡", "高回報"],
+      "badge": "限時活動",
+      "guarantee": "最低保底 300pt",
+      "limitLabel": "每人每日3次",
+      "cost": 300,
+      "cost10": 2700,
+      "remaining": 1200,
+      "total": 5000,
+      "theme": "onepiece",
+      "highlightText": "航海王抽卡!",
+      "subText": "必中稀有!!",
+      "trialConfig": {
+        "allowedRarities": ["SR", "R"]
+      },
+      "rewards": [
+        {
+          "id": "luffy-ur",
+          "name": "魯夫 Gear5 UR",
+          "rarity": "UR",
+          "description": "超帥氣的魯夫 Gear5 卡片。",
+          "weight": 1
+        },
+        {
+          "id": "zoro-sr",
+          "name": "索隆 SR",
+          "rarity": "SR",
+          "description": "三刀流的索隆戰鬥卡。",
+          "weight": 3
+        },
+        {
+          "id": "nami-r",
+          "name": "娜美 R",
+          "rarity": "R",
+          "description": "航海士娜美的角色卡。",
+          "weight": 6
+        },
+        {
+          "id": "berry-n",
+          "name": "貝里獎勵 N",
+          "rarity": "N",
+          "description": "一般獎勵，可累積兌換。",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "id": "yugioh-legend",
+      "title": "遊戲王傳說扭蛋",
+      "tags": ["傳說卡", "高機率", "保底機制"],
+      "badge": "週末加倍",
+      "guarantee": "最低保底 400pt",
+      "limitLabel": "每人限玩5次",
+      "cost": 400,
+      "cost10": 3600,
+      "remaining": 2340,
+      "total": 10000,
+      "theme": "yugioh",
+      "highlightText": "決鬥抽卡!",
+      "subText": "傳說降臨!!",
+      "trialConfig": {
+        "allowedRarities": ["R", "N"]
+      },
+      "rewards": [
+        {
+          "id": "blueeyes-ur",
+          "name": "青眼白龍 UR",
+          "rarity": "UR",
+          "description": "經典傳說級怪獸卡。",
+          "weight": 1
+        },
+        {
+          "id": "darkmagician-sr",
+          "name": "黑魔導 SR",
+          "rarity": "SR",
+          "description": "人氣極高的黑魔導卡片。",
+          "weight": 3
+        },
+        {
+          "id": "red-eyes-r",
+          "name": "真紅眼黑龍 R",
+          "rarity": "R",
+          "description": "酷炫的真紅眼黑龍卡。",
+          "weight": 6
+        },
+        {
+          "id": "spell-n",
+          "name": "魔法卡獎勵 N",
+          "rarity": "N",
+          "description": "一般魔法卡獎勵。",
+          "weight": 10
+        }
+      ]
+    }
+  ]
+}
