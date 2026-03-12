@@ -1,0 +1,136 @@
+.filter-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.filter-modal {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.filter-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.filter-modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.filter-modal-close {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: #f0f0f0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.filter-modal-close:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.filter-modal-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.filter-category {
+  margin-bottom: 20px;
+}
+
+.filter-category:last-child {
+  margin-bottom: 0;
+}
+
+.filter-category-label {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-tag {
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.filter-tag:hover {
+  border-color: #c41e3a;
+  color: #c41e3a;
+}
+
+.filter-tag--active {
+  background: #c41e3a;
+  border-color: #c41e3a;
+  color: #fff;
+}
+
+.filter-modal-footer {
+  display: flex;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #eee;
+}
+
+.filter-btn {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.filter-btn-reset {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.filter-btn-reset:hover {
+  background: #e0e0e0;
+}
+
+.filter-btn-apply {
+  background: #c41e3a;
+  color: #fff;
+}
+
+.filter-btn-apply:hover {
+  background: #a01830;
+}

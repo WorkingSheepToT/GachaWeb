@@ -1,12 +1,14 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   useParams,
   useSearchParams,
   useNavigate,
+  useLocation,
   Link,
 } from 'react-router-dom'
 import './GachaDrawPage.css'
 import { useGachaDraw } from '../hooks/useGachaDraw'
+import { useAuth } from '../hooks/useAuth'
 
 function GachaDrawPage() {
   const { eventId } = useParams()
@@ -15,13 +17,23 @@ function GachaDrawPage() {
   const drawCount = Math.min(Math.max(1, parseInt(searchParams.get('draws') || '1', 10) || 1), 10)
   const isMultiDraw = drawCount > 1
   const navigate = useNavigate()
+  const location = useLocation()
+  const { user } = useAuth()
 
   const { event, draw, drawMultiple } = useGachaDraw(eventId)
 
   const [isSpinning, setIsSpinning] = useState(false)
 
+  useEffect(() => {
+    if (!isTrial && !user) {
+      const redirect = encodeURIComponent(location.pathname + location.search)
+      navigate(`/login?redirect=${redirect}`)
+    }
+  }, [isTrial, user, navigate, location])
+
   const handleDraw = () => {
     if (!event) return
+    if (!isTrial && !user) return
     if (isSpinning) return
 
     const result = isMultiDraw

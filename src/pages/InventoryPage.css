@@ -1,0 +1,131 @@
+.inventory-page {
+  min-height: 100vh;
+  background: #f5f0eb;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.inventory-inner {
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 18px 24px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.inventory-title {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.inventory-desc {
+  margin: 0 0 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.inventory-empty {
+  color: #666;
+  font-size: 0.95rem;
+  padding: 24px 0;
+}
+
+.inventory-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.inventory-card {
+  background: #f9fafb;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.inventory-card-image-wrap {
+  position: relative;
+  aspect-ratio: 3/4;
+  background: linear-gradient(145deg, #fff8e7 0%, #ffe4b5 100%);
+}
+
+.inventory-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+}
+
+.inventory-card-image-placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+.inventory-card-count {
+  position: absolute;
+  bottom: 6px;
+  right: 8px;
+  min-width: 28px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.inventory-card-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.inventory-card-rarity {
+  display: inline-block;
+  width: fit-content;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.inventory-card-rarity--ur,
+.inventory-card-rarity--ar,
+.inventory-card-rarity--sar {
+  background: linear-gradient(90deg, #ffde59, #ff914d);
+  color: #4a2500;
+}
+
+.inventory-card-rarity--sr,
+.inventory-card-rarity--rr {
+  background: linear-gradient(90deg, #b19cd9, #7f5af0);
+  color: #fefcff;
+}
+
+.inventory-card-rarity--r {
+  background: linear-gradient(90deg, #4fd1c5, #3182ce);
+  color: #e6fffa;
+}
+
+.inventory-card-rarity--n,
+.inventory-card-rarity--s,
+.inventory-card-rarity--u {
+  background: linear-gradient(90deg, #a0aec0, #718096);
+  color: #edf2f7;
+}
+
+.inventory-card-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.3;
+}

@@ -1,4 +1,34 @@
 {
+  "filterTagCategories": [
+    {
+      "id": "general",
+      "label": "一般",
+      "tags": ["新著", "剩餘少量", "限時活動", "新手限定", "等級限定", "每日一次限定", "RUSH票", "高機率賺", "最低保證60%以上", "保證PSA10", "BOX", "額外獎", "紀念獎品", "最後一獎品", "鑑定品"]
+    },
+    {
+      "id": "pokemon",
+      "label": "寶可夢",
+      "tags": ["皮卡丘", "莉莉艾", "月亮伊布", "耿鬼", "噴火龍", "阿塞蘿拉", "GX", "VMAX"]
+    },
+    {
+      "id": "onepiece",
+      "label": "海賊王",
+      "tags": ["Comic Parallel", "SP", "促銷卡", "路飛"]
+    },
+    {
+      "id": "figures",
+      "label": "公仔",
+      "tags": ["hololive", "蔚藍檔案", "NIJISANJI", "NIKKE", "出包王女"]
+    }
+  ],
+  "sortOptions": [
+    { "id": "recommended", "label": "推薦訂單" },
+    { "id": "remaining", "label": "剩餘少量" },
+    { "id": "new", "label": "新到貨訂單" },
+    { "id": "popular", "label": "人氣順序" },
+    { "id": "highToLow", "label": "從高到低" },
+    { "id": "lowToHigh", "label": "從低到高" }
+  ],
   "categories": [
     { "id": "home", "label": "首頁" },
     { "id": "rush", "label": "RUSH" },

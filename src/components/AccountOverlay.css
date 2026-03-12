@@ -1,0 +1,257 @@
+.account-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.account-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.account-panel {
+  position: relative;
+  max-width: 420px;
+  width: 100%;
+  max-height: 90vh;
+  background: #f9fafb;
+  border-radius: 24px;
+  padding: 20px 18px 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  overflow-y: auto;
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.account-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.account-close {
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.account-rank-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px 14px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 16px;
+}
+
+.rank-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  color: #6b7280;
+}
+
+.rank-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.rank-xp {
+  margin-top: 2px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.rank-bar {
+  margin-top: 8px;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.rank-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f97316, #facc15);
+}
+
+.rank-user-line {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.account-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.shortcut-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 10px 4px;
+  text-align: center;
+  text-decoration: none;
+  color: #111827;
+  font-size: 0.75rem;
+  border: none;
+}
+
+.shortcut-item[disabled] {
+  opacity: 0.5;
+}
+
+.shortcut-icon {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.account-history-preview {
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px 10px 10px;
+  margin-bottom: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.section-title {
+  font-size: 0.95rem;
+  margin: 0 0 8px;
+}
+
+.history-empty {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.history-mini-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.history-mini-item {
+  padding: 4px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.history-mini-main {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.history-mini-rarity {
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.history-mini-rarity--ur,
+.history-mini-rarity--ar,
+.history-mini-rarity--sar {
+  background: linear-gradient(90deg, #ffde59, #ff914d);
+  color: #4a2500;
+}
+
+.history-mini-rarity--sr,
+.history-mini-rarity--rr {
+  background: linear-gradient(90deg, #b19cd9, #7f5af0);
+  color: #fefcff;
+}
+
+.history-mini-rarity--r {
+  background: linear-gradient(90deg, #4fd1c5, #3182ce);
+  color: #e6fffa;
+}
+
+.history-mini-rarity--n,
+.history-mini-rarity--s,
+.history-mini-rarity--u {
+  background: linear-gradient(90deg, #a0aec0, #718096);
+  color: #edf2f7;
+}
+
+.history-mini-name {
+  font-size: 0.8rem;
+}
+
+.history-mini-meta {
+  margin-top: 2px;
+  display: flex;
+  gap: 6px;
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+.history-mini-tag {
+  padding: 2px 5px;
+  border-radius: 999px;
+  background: #c41e3a;
+  color: #fff;
+}
+
+.history-view-all {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.history-view-all:hover {
+  text-decoration: underline;
+}
+
+.account-settings {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.settings-row {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-bottom: 1px solid #f3f4f6;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.settings-row:last-of-type {
+  border-bottom: none;
+}
+
+.settings-row[disabled] {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.settings-arrow {
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  .account-panel {
+    max-width: 100%;
+    border-radius: 0;
+    max-height: 100vh;
+  }
+}

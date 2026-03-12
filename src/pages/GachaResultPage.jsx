@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { useLocation, useNavigate, useParams, Link } from 'react-router-dom'
 import './GachaResultPage.css'
 import gachaConfig from '../config/gachaConfig.json'
@@ -8,7 +9,7 @@ function GachaResultPage() {
   const { eventId } = useParams()
   const location = useLocation()
   const navigate = useNavigate()
-  const { isMember, markAsMember, claimReward } = usePlayerState()
+  const { claimReward } = usePlayerState()
 
   const reward = location.state?.reward
   const rewards = location.state?.rewards ?? null
@@ -36,20 +37,29 @@ function GachaResultPage() {
 
   const rarityClass = reward ? `reward-rarity--${(reward.rarity || '').toLowerCase()}` : ''
 
+  const hasAutoClaimedRef = useRef(false)
+
+  useEffect(() => {
+    if (isTrial || hasAutoClaimedRef.current) return
+    if (isMulti) {
+      rewards.forEach((r) => claimReward({ eventId, reward: r, isTrial: false }))
+    } else if (reward) {
+      claimReward({ eventId, reward, isTrial: false })
+    }
+    hasAutoClaimedRef.current = true
+  }, [isTrial, isMulti, rewards, reward, claimReward, eventId])
+
   const handleDrawAgain = () => {
     const query = drawCount > 1 ? `?draws=${drawCount}` : isTrial ? '?trial=1' : ''
     navigate(`/gacha/${eventId}${query}`)
   }
 
-  const handleRegisterAndClaim = () => {
-    markAsMember()
-    if (isMulti) rewards.forEach((r) => claimReward({ eventId, reward: r }))
-    else claimReward({ eventId, reward })
-  }
-
-  const handleClaimForMember = () => {
-    if (isMulti) rewards.forEach((r) => claimReward({ eventId, reward: r }))
-    else claimReward({ eventId, reward })
+  const handleClaimTrial = () => {
+    if (isMulti) {
+      rewards.forEach((r) => claimReward({ eventId, reward: r, isTrial: true }))
+    } else if (reward) {
+      claimReward({ eventId, reward, isTrial: true })
+    }
   }
 
   return (
@@ -97,44 +107,24 @@ function GachaResultPage() {
           </div>
         )}
 
-        {isTrial && !isMember && (
+        {isTrial ? (
           <p className="result-note">
             {isMulti
-              ? '這是試用抽獎結果，只有註冊成為會員並領取，這些卡才會真正發到你的帳號。'
-              : '這是試用抽獎結果，只有註冊成為會員並領取，這張卡才會真正發到你的帳號。'}
+              ? '這是試用抽獎結果，按「領取全部」可將這些卡記錄在本機抽卡紀錄。'
+              : '這是試用抽獎結果，按「領取此卡」可將卡片記錄在本機抽卡紀錄。'}
           </p>
-        )}
-
-        {isTrial && isMember && (
+        ) : (
           <p className="result-note">
-            你已是會員，點「領取此卡」即可把卡片加入你的收藏（本機記錄）。
+            本次抽到的卡片已自動加入抽卡紀錄。
           </p>
         )}
 
         <div className="result-actions">
-          {isTrial ? (
-            isMember ? (
-              <button
-                type="button"
-                className="result-btn-primary"
-                onClick={handleClaimForMember}
-              >
-                {isMulti ? '領取全部' : '領取此卡'}
-              </button>
-            ) : (
-              <button
-                type="button"
-                className="result-btn-primary"
-                onClick={handleRegisterAndClaim}
-              >
-                {isMulti ? '註冊並領取全部' : '註冊並領取此卡'}
-              </button>
-            )
-          ) : (
+          {isTrial && (
             <button
               type="button"
               className="result-btn-primary"
-              onClick={handleClaimForMember}
+              onClick={handleClaimTrial}
             >
               {isMulti ? '領取全部' : '領取此卡'}
             </button>

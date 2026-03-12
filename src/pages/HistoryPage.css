@@ -1,0 +1,103 @@
+.history-page {
+  min-height: 100vh;
+  background: #f5f0eb;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.history-inner {
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 18px 24px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.history-title {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+}
+
+.history-empty {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-item {
+  padding: 10px 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.history-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.history-rarity {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.history-rarity--ur,
+.history-rarity--ar,
+.history-rarity--sar {
+  background: linear-gradient(90deg, #ffde59, #ff914d);
+  color: #4a2500;
+}
+
+.history-rarity--sr,
+.history-rarity--rr {
+  background: linear-gradient(90deg, #b19cd9, #7f5af0);
+  color: #fefcff;
+}
+
+.history-rarity--r {
+  background: linear-gradient(90deg, #4fd1c5, #3182ce);
+  color: #e6fffa;
+}
+
+.history-rarity--n,
+.history-rarity--s,
+.history-rarity--u {
+  background: linear-gradient(90deg, #a0aec0, #718096);
+  color: #edf2f7;
+}
+
+.history-name {
+  font-size: 0.95rem;
+}
+
+.history-meta {
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.history-event {
+  font-weight: 500;
+}
+
+.history-time {
+  opacity: 0.9;
+}
+
+.history-tag {
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: #c41e3a;
+  color: #fff;
+}
